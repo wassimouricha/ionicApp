@@ -18,7 +18,6 @@ export class TabsPage {
   private getProduct(){
     this.service.getAllProducts().subscribe(response => this.products = [...response.products])
 
-    
    }
 
 }

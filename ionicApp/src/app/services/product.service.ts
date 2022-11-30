@@ -9,11 +9,14 @@ import { environment } from 'src/environments/environment';
 export class ProductService {
 
   private URL_PATH = "/products"
-
   constructor( private http: HttpClient) { }
 
 
    getAllProducts() : Observable<any> {
-    return this.http.get(environment.url + this.URL_PATH)
+    return this.http.get(environment.url + this.URL_PATH + `?limit=10`)
+  }
+
+  getProductSkip(number: number): Observable<any> {
+    return this.http.get(environment.url + this.URL_PATH + `?limit=10&skip=${number}`)
   }
 }
