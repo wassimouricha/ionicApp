@@ -6,10 +6,11 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<!-- <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
 
   </ion-header>
+
 
   <ion-list>
     <ion-item *ngFor="let products of products">
@@ -21,4 +22,21 @@
   
   </ion-list>
   
-</ion-content>
+</ion-content> -->
+
+<ion-card>
+  <!-- <ion-card-header>
+    <ion-card-title>Card Title</ion-card-title>
+    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+  </ion-card-header> -->
+  <ion-card-content>
+    <ion-list>
+      <ion-item *ngFor="let products of products">
+        <ion-thumbnail slot="start">
+          <img [src]="products.thumbnail" />
+        </ion-thumbnail>
+        <ion-label>{{ products.title}} - Prix :  {{products.price}} euros  - Catégorie : {{products.category }}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
